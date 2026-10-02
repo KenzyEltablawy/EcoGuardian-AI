@@ -1,0 +1,49 @@
+# EcoGuardian AI: Project Description
+
+**Author:** Kenzy Raafat Eltablawy
+**Track:** AI Showcase Track
+**Category:** High School
+**Competition:** WAICY 2026
+
+---
+
+## Project Description (250 words)
+
+Urban areas face escalating environmental challenges, including urban heat islands and particulate air pollution. While individual mitigation strategies exist, accessible tools that integrate multiple environmental indicators and translate them into actionable recommendations remain limited.
+
+This project presents EcoGuardian AI, a lightweight decision support system that combines temperature, humidity, wind speed, PM2.5, and PM10 data with engineered risk indicators: Heat Risk, Pollution Risk, and Climate Severity. A Random Forest classifier categorizes environmental conditions into six intervention strategies: Green Roof, Cool Roof, Plant Trees, Air Pollution Control, Mixed Strategy, and No Immediate Action.
+
+The system is implemented as an interactive Streamlit web application that retrieves real-time environmental data via Open-Meteo APIs, displays the city's geographical location, reports current conditions, and provides an AI-generated recommendation with a confidence score and threshold-based explanation.
+
+Evaluation on a held-out test set achieved approximately 98% classification accuracy, demonstrating the feasibility of integrating environmental indicators with machine learning. However, this accuracy reflects the model's ability to reproduce the rule-based labeling framework, not real-world intervention effectiveness.
+
+EcoGuardian AI serves as a preliminary planning tool for urban climate intervention, bridging the gap between environmental data analysis and accessible decision support.
+
+---
+
+## AI Usage Explanation (250 words)
+
+EcoGuardian AI employs a Random Forest Classifier, an ensemble machine learning algorithm that constructs 300 decision trees to classify environmental conditions into intervention categories.
+
+**AI Technologies Used:**
+- Random Forest Classifier (Scikit-learn)
+- Feature Engineering (custom risk indices)
+- Rule-based Label Generation
+- Streamlit for deployment
+- Open-Meteo APIs for real-time data
+
+**Role of AI:**
+The AI model analyzes eight input features—temperature, humidity, wind speed, PM2.5, PM10, Heat Risk, Pollution Risk, and Climate Severity—and predicts the most suitable climate intervention. It also provides a confidence score based on class probabilities.
+
+**Student Contributions:**
+I designed and developed the entire system:
+- Collected and preprocessed WHO air quality data (39,527 records → 6,044 city records).
+- Engineered composite risk indicators (Heat Risk, Pollution Risk, Climate Severity).
+- Created a rule-based labeling framework to generate training targets.
+- Trained and evaluated the Random Forest model (80:20 split, 98% accuracy).
+- Built the Streamlit web application with Folium map integration.
+- Integrated Open-Meteo APIs for live environmental data.
+- Implemented a threshold-based explanation layer for interpretability.
+
+**Limitations:**
+The model learns from rule-generated labels, not expert decisions. The 98% accuracy reflects consistency with the labeling framework, not real-world effectiveness. The system is a preliminary planning tool, not a substitute for professional assessment.
